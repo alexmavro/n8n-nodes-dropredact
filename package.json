@@ -1,0 +1,47 @@
+{
+  "name": "n8n-nodes-dropredact",
+  "version": "0.1.0",
+  "description": "n8n community node for dropredact — local, private PII redaction with reversible tokens",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "pii",
+    "redaction",
+    "gdpr",
+    "privacy",
+    "anonymization"
+  ],
+  "license": "MIT",
+  "homepage": "https://dropredact.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lexi-Energy/n8n-nodes-dropredact.git"
+  },
+  "main": "dist/nodes/Dropredact/Dropredact.node.js",
+  "scripts": {
+    "build": "tsc && node scripts/copy-icons.mjs",
+    "dev": "tsc --watch",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/DropredactApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Dropredact/Dropredact.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "n8n-workflow": "^1.0.0",
+    "typescript": "~5.4.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

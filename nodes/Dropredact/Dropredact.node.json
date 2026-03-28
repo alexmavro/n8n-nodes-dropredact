@@ -1,0 +1,17 @@
+{
+  "node": "n8n-nodes-dropredact.dropredact",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["Data & Storage"],
+  "subcategories": {
+    "Data & Storage": ["Data Transformation"]
+  },
+  "resources": {
+    "primaryDocumentation": [
+      {
+        "url": "https://dropredact.com"
+      }
+    ]
+  },
+  "alias": ["pii", "redact", "anonymize", "gdpr", "privacy", "pseudonymize", "deredact"]
+}
