@@ -120,4 +120,4 @@ This node has `usableAsTool` enabled — it works as a tool in n8n's AI agent wo
 ## Links
 
 - [dropredact](https://dropredact.com)
-- [dropredact on GitHub](https://github.com/Lexi-Energy/dropredact)
+- [dropredact on GitHub](https://github.com/alexmavro/dropredact)

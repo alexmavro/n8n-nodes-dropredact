@@ -11,11 +11,12 @@
     "privacy",
     "anonymization"
   ],
+  "author": "Alexandra Schwartz (alexmavro)",
   "license": "MIT",
   "homepage": "https://dropredact.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Lexi-Energy/n8n-nodes-dropredact.git"
+    "url": "https://github.com/alexmavro/n8n-nodes-dropredact.git"
   },
   "main": "dist/nodes/Dropredact/Dropredact.node.js",
   "scripts": {
