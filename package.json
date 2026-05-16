@@ -1,7 +1,7 @@
 {
   "name": "n8n-nodes-dropredact",
   "version": "0.1.0",
-  "description": "n8n community node for dropredact — local, private PII redaction with reversible tokens",
+  "description": "n8n community node for dropredact — local, private PII redaction with reversible tokens. Requires dropredact >=1.0.0.",
   "keywords": [
     "n8n-community-node-package",
     "n8n",

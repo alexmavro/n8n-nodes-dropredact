@@ -430,6 +430,7 @@ export class Dropredact implements INodeType {
 			);
 		}
 		const baseUrl = rawUrl.replace(/\/+$/, '');
+		const apiUrl = `${baseUrl}/api`;
 
 		const resource = this.getNodeParameter('resource', 0) as string;
 		const operation = this.getNodeParameter('operation', 0) as string;
@@ -440,7 +441,7 @@ export class Dropredact implements INodeType {
 				const endpoint = operation === 'healthCheck' ? '/health' : '/license';
 				const response = await this.helpers.httpRequest({
 					method: 'GET',
-					url: `${baseUrl}${endpoint}`,
+					url: `${apiUrl}${endpoint}`,
 					json: true,
 				});
 				returnData.push({ json: response as IDataObject, pairedItem: { item: 0 } });
@@ -462,7 +463,7 @@ export class Dropredact implements INodeType {
 			try {
 				const response = await this.helpers.httpRequest({
 					method: 'GET',
-					url: `${baseUrl}/registers`,
+					url: `${apiUrl}/registers`,
 					json: true,
 				});
 				if (!Array.isArray(response)) {
@@ -501,7 +502,7 @@ export class Dropredact implements INodeType {
 
 						const result = await this.helpers.httpRequest({
 							method: 'POST',
-							url: `${baseUrl}/analyze`,
+							url: `${apiUrl}/analyze`,
 							body: fd,
 							json: true,
 						});
@@ -543,7 +544,7 @@ export class Dropredact implements INodeType {
 						if (hasRegister) {
 							const resp = (await this.helpers.httpRequest({
 								method: 'POST',
-								url: `${baseUrl}/redact`,
+								url: `${apiUrl}/redact`,
 								body: fd,
 								json: true,
 							})) as Record<string, unknown>;
@@ -595,7 +596,7 @@ export class Dropredact implements INodeType {
 						} else {
 							const resp = (await this.helpers.httpRequest({
 								method: 'POST',
-								url: `${baseUrl}/redact`,
+								url: `${apiUrl}/redact`,
 								body: fd,
 								encoding: 'arraybuffer',
 								returnFullResponse: true,
@@ -697,7 +698,7 @@ export class Dropredact implements INodeType {
 
 						const resp = (await this.helpers.httpRequest({
 							method: 'POST',
-							url: `${baseUrl}/redact/batch`,
+							url: `${apiUrl}/redact/batch`,
 							body: fd,
 							json: true,
 						})) as Record<string, unknown>;
@@ -811,7 +812,7 @@ export class Dropredact implements INodeType {
 
 						const resp = (await this.helpers.httpRequest({
 							method: 'POST',
-							url: `${baseUrl}/deredact`,
+							url: `${apiUrl}/deredact`,
 							body: fd,
 							encoding: 'arraybuffer',
 							returnFullResponse: true,
@@ -909,7 +910,7 @@ export class Dropredact implements INodeType {
 
 						const resp = (await this.helpers.httpRequest({
 							method: 'POST',
-							url: `${baseUrl}/deredact/batch`,
+							url: `${apiUrl}/deredact/batch`,
 							body: fd,
 							json: true,
 						})) as Record<string, unknown>;
